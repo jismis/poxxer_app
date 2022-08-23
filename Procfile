@@ -1,2 +1,2 @@
-web: gunicorn mp-only-graph:server
+web: gunicorn mp-version-2:server
 
