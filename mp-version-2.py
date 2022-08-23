@@ -30,7 +30,7 @@ print(df[:5])
 
 app.layout = html.Div([
 
-    html.H1("Web Application Dashboards with Dash", style={'text-align': 'center'}),
+    html.H1("Monkeypox Cases in USA", style={'text-align': 'center'}),
 
     dcc.Dropdown(id="slct_option",
                  options=[
@@ -67,7 +67,7 @@ def update_graph(option_slctd):
         locations='State_Code',
         scope="usa",
         color=current_reported_date,
-        hover_data=['Province_State', current_reported_date],
+        hover_data=['Province_State', current_reported_date,'Difference_in_Cases'],
         color_continuous_scale=px.colors.sequential.YlOrRd,
         labels={'Province_State': 'State', current_reported_date: 'Total Cases', 'Difference_in_Cases': 'Case Increase'},
         template='plotly_dark'
