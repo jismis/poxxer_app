@@ -34,7 +34,9 @@ app.layout = html.Div([
 
     dcc.Dropdown(id="slct_option",
                  options=[
-                     {"label": "Today's Cases", "value": current_reported_date}],
+                     {"label": "Today's Cases", "value": current_reported_date}
+                    #  {"label": "Case Increase ", "value": current_reported_date}
+                     ],
                  multi=False,
                  value=current_reported_date,
                  style={'width': "40%"}
@@ -55,7 +57,7 @@ app.layout = html.Div([
 )
 def update_graph(option_slctd):
     dff = df.copy()
-    dff = dff[dff.Province_State != "Total"]
+    dff = dff[dff.Province_State != "Total"] ##takes total out of rows i think
     #dff = dff.drop("Total",axis=1)
     #dff = dff[dff[name_column] == option_slctd]
     container = "showing {}".format(option_slctd)
