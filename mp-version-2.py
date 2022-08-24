@@ -14,9 +14,6 @@ df = pd.read_csv("https://docs.google.com/spreadsheets/d/12OND1wYiqBGbp2XFmxGgMO
 current_reported_date = df.columns[-1]
 previous_reported_date = df.columns[-2]
 
-print(df.columns[-1])
-
-
 ##create column for difference between two columns
 
 def diff(a, b):
@@ -26,8 +23,6 @@ df['Difference_in_Cases'] = df.apply(
     lambda x: diff(x[previous_reported_date], x[current_reported_date]), axis=1)
 
 # print(df.columns)
-print(df[:5])
-
 app.layout = html.Div([
 
     html.H1("Monkeypox Cases in USA", style={'text-align': 'center'}),
